@@ -1,7 +1,7 @@
 {
   "name": "spacex-test",
+  "author": "Mohammed Azam",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "@testing-library/jest-dom": "^5.16.5",
