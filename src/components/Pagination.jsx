@@ -11,7 +11,7 @@ function Pagination(props) {
   } = props;
   return (
     <div>
-      <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+      <div className="flex items-center justify-between border-gray-200 bg-white px-4 py-3 sm:px-6">
         <div className="mx-auto">
           <nav
             className="isolate inline-flex -space-x-px rounded-md shadow-sm"
@@ -20,7 +20,7 @@ function Pagination(props) {
             <button
               onClick={handlePrevPage}
               className={`relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ${
-                currentPage === 1 ? "ring-gray-300" : "ring-indigo-600"
+                currentPage === 1 ? "ring-gray-300" : "ring-gray-600"
               } hover:bg-gray-50 focus:z-20 focus:outline-offset-0`}
               disabled={currentPage === 1}
             >
@@ -31,9 +31,7 @@ function Pagination(props) {
             <button
               onClick={handleNextPage}
               className={`relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ${
-                currentPage === pages.length
-                  ? "ring-gray-300"
-                  : "ring-indigo-600"
+                currentPage === pages.length ? "ring-gray-300" : "ring-gray-500"
               } hover:bg-gray-50 focus:z-20 focus:outline-offset-0`}
               disabled={currentPage === pages.length}
             >

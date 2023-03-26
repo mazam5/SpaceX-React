@@ -2,13 +2,13 @@ import React from "react";
 
 export default function Banner() {
   return (
-    <div className="border-b-2">
+    <main className="border-b-2">
       <div className="container mx-auto w-4/5">
-        <div className="flex flex-wrap items-center md:py-4">
-          <div className="w-full md:w-1/2">
-            <div className="relative mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <h2 className="relative my-12 w-4/5 text-4xl md:text-5xl">
-                Powerful Tagline for your Product
+        <div className="flex flex-col items-center sm:py-5 md:flex-row md:py-4">
+          <div className="w-full text-center md:w-1/2 md:text-left">
+            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+              <h2 className="my-6 text-2xl md:text-5xl">
+                Capsules that reached Mars.
               </h2>
               <p className="my-6 text-lg">Welcome to our website!</p>
             </div>
@@ -17,11 +17,11 @@ export default function Banner() {
             <img
               src="https://images.pexels.com/photos/23781/pexels-photo.jpg"
               alt="Capsule"
-              className="h-auto w-full"
+              className="h-auto w-full max-w-sm sm:mx-auto md:max-w-none"
             />
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
