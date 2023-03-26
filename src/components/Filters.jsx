@@ -1,7 +1,31 @@
-import React from "react";
-function Filters(props) {
-  const { inputs, handleChange, handleSubmit } = props;
-
+import React, { useContext } from "react";
+import AppContext from "../AppContext";
+function Filters() {
+  const { setInputs, inputs, setCapsules } = useContext(AppContext);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost/php/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `type=${inputs.type}&status=${inputs.status}&landings=${inputs.landings}`,
+      });
+      if (response.ok) {
+        const responseData = await response.json();
+        setCapsules(responseData);
+      } else {
+        console.error(`HTTP error! status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error(`Fetch error: ${error}`);
+    }
+  };
   return (
     <article>
       <div className="container mx-auto max-w-7xl p-4 md:w-4/5">
@@ -14,7 +38,6 @@ function Filters(props) {
                 type="number"
                 name="landings"
                 id="landings"
-                defaultValue={""}
                 min={"0"}
                 max={"3"}
                 placeholder="Enter No. of Landings"

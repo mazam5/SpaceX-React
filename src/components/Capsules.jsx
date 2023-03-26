@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+import AppContext from "../AppContext";
 
 export default function Capsules(props) {
-  const { gridsToDisplay, isModalOpen, modalIndex, toggleModal, state } = props;
+  const [state, setState] = useState({
+    loading: true,
+    data: null,
+    error: null,
+  });
+  const {
+    setCapsules,
+    setIsModalOpen,
+    isModalOpen,
+    setModalIndex,
+    gridsToDisplay,
+    modalIndex,
+  } = useContext(AppContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost/php/");
+        const data = await response.json();
+        setCapsules(data);
+        setState({ loading: false, data: data, error: null });
+      } catch (error) {
+        setState({ loading: false, data: null, error: error.message });
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, [setCapsules]);
+
+  const toggleModal = (index) => {
+    setIsModalOpen(!isModalOpen);
+    if (index !== undefined) {
+      setModalIndex(index);
+    }
+  };
   if (state.loading) {
     return (
       <div className="my-20">
@@ -13,7 +48,7 @@ export default function Capsules(props) {
   if (state.error) {
     return (
       <div className="my-20">
-        <p className="mx-auto w-4/5 text-center">{state.error} 😔</p>
+        <p className="mx-auto w-4/5 text-center">{state.error}</p>
       </div>
     );
   }
@@ -33,6 +68,8 @@ export default function Capsules(props) {
             <article key={index} className="rounded-lg bg-gray-200 p-4">
               <h2>Serial: {item.capsule_serial}</h2>
               <p>Type: {item.type}</p>
+
+              {/* <p>ID: {item.capsule_id}</p> */}
               <p>Status: {item.status}</p>
               {item.original_launch ? (
                 <p>
