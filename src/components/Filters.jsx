@@ -9,7 +9,7 @@ function Filters() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost/php/", {
+      const response = await fetch("http://localhost/PHP/", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
