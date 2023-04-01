@@ -19,7 +19,7 @@ export default function Capsules(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost/php/");
+        const response = await fetch("http://localhost/PHP/");
         const data = await response.json();
         setCapsules(data);
         setState({ loading: false, data: data, error: null });
