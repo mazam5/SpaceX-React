@@ -1,6 +1,3 @@
-Views Count: [![Views](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer.svg)](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer)
-
-Pulls Count: [![Pulls](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)
 # Getting Started with Spacex Capsules
 
 ## To Run this Project in your System (Windows)
@@ -16,3 +13,7 @@ Pulls Count: [![Pulls](https://img.shields.io/github/issues-pr/mohammedazam55/Mo
 ### 5. In Windows go to directory [`C:\xampp\htdocs`] paste the php folder inside the directory
 
 ### 6. Run `npm run start`
+
+Views Count: [![Views](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer.svg)](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer)
+
+Pulls Count: [![Pulls](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)
