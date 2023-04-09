@@ -1,3 +1,6 @@
+Views Count: [![Views](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer.svg)](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer)
+
+Pulls Count: [![Pulls](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)
 # Getting Started with Spacex Capsules
 
 ## To Run this Project in your System (Windows)
