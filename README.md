@@ -17,3 +17,9 @@
 Views Count: [![Views](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer.svg)](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer)
 
 Pulls Count: [![Pulls](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer)
+
+[![Views Count This Week](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer/week.svg)](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer/week)
+[![Pulls Count This Week](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer/week)](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer/week)
+
+[![Views Count This Month](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer/month.svg)](https://views.whatilearened.today/views/github/mohammedazam55/MohammedAzam-Frontend-Developer/month)
+[![Pulls Count This Month](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer/month)](https://img.shields.io/github/issues-pr/mohammedazam55/MohammedAzam-Frontend-Developer/month)
