@@ -2,13 +2,17 @@ import React, { useContext } from "react";
 import AppContext from "../AppContext";
 function Filters() {
   const { setInputs, inputs, setCapsules } = useContext(AppContext);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
   };
+  const apiUrl = "https://api.spacexdata.com/v3/capsules";
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // used for the local server XAMPP
+      /*
       const response = await fetch("http://localhost/PHP/", {
         method: "POST",
         headers: {
@@ -16,6 +20,18 @@ function Filters() {
         },
         body: `type=${inputs.type}&status=${inputs.status}&landings=${inputs.landings}`,
       });
+      */
+      // used for the live server and deployed on netlify
+      const response = await fetch(
+        apiUrl +
+          `?landings=${inputs.landings}&type=${inputs.type}&status=${inputs.status}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
       if (response.ok) {
         const responseData = await response.json();
         setCapsules(responseData);

@@ -15,17 +15,21 @@ export default function Capsules(props) {
     gridsToDisplay,
     modalIndex,
   } = useContext(AppContext);
-
+  const apiUrl = "https://api.spacexdata.com/v3/capsules";
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost/PHP/");
+        // we can also use the PHP server to fetch data by replacing the apiUrl with xampUrl
+        // const response = await fetch(xampUrl);
+
+        // used for the deployment on Netlify
+        const response = await fetch(apiUrl);
         const data = await response.json();
         setCapsules(data);
-        setState({ loading: false, data: data, error: null });
+        setState({ data, loading: false });
       } catch (error) {
-        setState({ loading: false, data: null, error: error.message });
-        console.error(error);
+        setState({ error, loading: false });
+        console.log(error);
       }
     };
     fetchData();
@@ -82,7 +86,7 @@ export default function Capsules(props) {
               <p>Landings: {item.landings}</p>
               <p>Reuse Count: {item.reuse_count}</p>
               <button
-                className="mt-4 w-full rounded bg-gray-900 py-2 px-4 font-bold text-white hover:bg-gray-700"
+                className="mt-4 w-full rounded bg-gray-900 px-4 py-2 font-bold text-white hover:bg-gray-700"
                 onClick={() => toggleModal(index)}
               >
                 Show Details
@@ -91,9 +95,9 @@ export default function Capsules(props) {
                 <div className="fixed inset-0 z-10 overflow-y-auto">
                   <div className="flex min-h-screen items-center justify-center bg-black bg-opacity-60">
                     <div className="relative w-1/2 rounded-lg bg-white">
-                      <div className="absolute top-0 right-0 p-8">
+                      <div className="absolute right-0 top-0 p-8">
                         <button
-                          className="rounded bg-gray-900 py-2 px-4 font-bold text-white hover:bg-gray-700"
+                          className="rounded bg-gray-900 px-4 py-2 font-bold text-white hover:bg-gray-700"
                           onClick={toggleModal}
                         >
                           Close
